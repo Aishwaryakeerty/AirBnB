@@ -1,0 +1,21 @@
+{
+  "name": "ExpressBase",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "ejs": "*",
+    "amqp": "^0.2.6",
+    "bcryptjs": "^2.3.0",
+    "connect-mongo": "^1.3.2",
+    "express-session": "^1.14.2",
+    "mongodb": "^2.2.11",
+    "mysql": "^2.11.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "simple-node-logger": "^0.93.12"
+  }
+}

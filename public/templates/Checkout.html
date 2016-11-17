@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../stylesheets/bootstrap/css/bootstrap.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../stylesheets/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+
+        (function ($) {
+            $(document).ready(function(){
+
+                // hide .navbar first
+                $(".navbar").hide();
+
+                // fade in .navbar
+                $(function () {
+                    $(window).scroll(function () {
+                        // set distance user needs to scroll before we fadeIn navbar
+                        if ($(this).scrollTop() > 400) {
+                            $('.navbar').fadeIn();
+                        } else {
+                            $('.navbar').fadeOut();
+                        }
+                    });
+
+
+                });
+
+            });
+        }(jQuery));
+    </script>
+
+    <style>
+        /* Note: Try to remove the following lines to see the effect of CSS positioning */
+        .affix {
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--Beginning of left checkout-->
+        <div class="col-md-offset-1 col-md-6">
+
+            <div class="panel panel-collapse" style="border: dotted;margin-top: 20px">
+                <h3 class="panel-heading">1. About Your Trip</h3>
+                <div class="panel-body">
+                    <div class="row">
+                    <img class="img-circle" src="http://placehold.it/1200x600/fffccc/000&text=Two" height="70" width="70">
+                    Your host, {{Name}}
+                        </div><br>
+                    <div class="row">
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--end of left checkout-->
+        <!--start of right checkout-->
+        <div class="col-md-4">
+
+        </div>
+        <!--end of right checkout-->
+    </div>
+
+</body>
+</html>
