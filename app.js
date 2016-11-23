@@ -20,6 +20,7 @@ var mongoStore = require("connect-mongo")(expressSession);
 
 var mongoURL="mongodb://localhost:27017/airbnbv10";
 var login=require('./routes/signup');
+var room=require('./routes/room');
 //Session configuration
 app.use(expressSession({  secret: 'Airbnb',
   resave: false,
@@ -57,6 +58,9 @@ app.get('/users', user.list);
 //calls to routes for airbnb
 
 app.post('/register',login.register);
+
+//api to get all the room details
+app.post('/getRoom',room.getDetails);
 
 
 
