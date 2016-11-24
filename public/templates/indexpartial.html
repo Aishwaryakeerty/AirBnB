@@ -1,5 +1,6 @@
 
 <div ng-include="'NavigationBar.html'"></div>
+<div ng-controller="TestCtrl">
 <div class="col-md-offset-1 col-md-8">
     <h1 style="padding-top: 20px;padding-bottom: 20px">
         <span style="color: #FF5A5F;font-weight: 700;font-size: 48px">Live there.</span>
@@ -17,7 +18,7 @@
 
                 </div>
                 <div class="row">
-                    <input type="text" class="form-control" placeholder="Destination,city,address">
+                    <input type="text" class="form-control" placeholder="Destination,city,address"  ng-autocomplete="result1" details="details1" options="options1" ng-model="journey.place">
                 </div>
             </div>
 
@@ -33,10 +34,10 @@
 
                 </div>
                 <div class="col-md-5">
-                    <input type="date" class="form-control" style="width: 150px;" placeholder="Check In">
+                    <input type="date" ng-model="journey.sdate" class="form-control" style="width: 150px;" placeholder="Check In">
                 </div>
                 <div class="col-md-6">
-                    <input type="date" class="form-control" style="width: 150px;" placeholder="Check Out">
+                    <input type="date" ng-model="journey.edate" class="form-control" style="width: 150px;" placeholder="Check Out">
                 </div>
             </div>
         </div>
@@ -59,7 +60,7 @@
                                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" ng-model="journey.guest">
                                         <li><a href="#">1 Guest</a></li>
                                         <li><a href="#">2 Guests</a></li>
                                         <li><a href="#">3 Guests</a></li>
@@ -78,13 +79,13 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-lg" style="margin-left: 40px;margin-top: 5px;background-color: #FF5A5F;color: white;font-weight: bold">Search</button>
+                    <button type="button" class="btn btn-lg" style="margin-left: 40px;margin-top: 5px;background-color: #FF5A5F;color: white;font-weight: bold" ng-click="searchOptions()">Search</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 <div class="col-md-offset-1 col-md-10">
     <h3 style="font-weight: 100">Explore the world</h3>
 </div>

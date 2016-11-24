@@ -2,7 +2,7 @@
  * Created by harshmehta6711 on 17-11-2016.
  */
 
-var clientModule=angular.module("clientModule",['ui.router']).run(function ($rootScope) {
+var clientModule=angular.module("clientModule",['ui.router','ngAutocomplete']).run(function ($rootScope) {
     $rootScope.authenticated = false;
     $rootScope.current_user = '';
 
@@ -70,6 +70,55 @@ clientModule.controller('ctrlNavigation',function ($scope,$http,$rootScope) {
         });
     }
     
+});
+
+clientModule.controller('TestCtrl',function ($scope,$http) {
+
+    $scope.result1 = '';
+    $scope.options1 = null;
+    $scope.details1 = '';
+
+
+    $scope.searchOptions=function () {
+
+        console.log($scope.journey);
+        $http({
+            method : 'POST',
+            url : '/searchroom',
+            data : $scope.journey
+        }).success(function(data) {
+            //checking the response data for statusCode
+            if (data.statusCode == 401) {
+                $rootScope.authenticated = true;
+                // $scope.validlogin = true;
+            }
+            else
+            {
+                $scope.validlogin = false;
+                $scope.invalid_login = true;
+            }
+            //Making a get call to the '/redirectToHomepage' API
+            //window.location.assign("/homepage");
+        }).error(function(error) {
+            $scope.validlogin = true;
+            $scope.invalid_login = true;
+        });
+    }
+
+    // $scope.result2 = '';
+    // $scope.options2 = {
+    //     country: 'ca',
+    //     types: '(cities)'
+    // };    $scope.details2 = '';
+    //
+    //
+    //
+    // $scope.result3 = '';
+    // $scope.options3 = {
+    //     country: 'gb',
+    //     types: 'establishment'
+    // };
+    // $scope.details3 = '';
 });
 
 

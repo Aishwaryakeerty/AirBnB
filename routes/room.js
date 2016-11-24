@@ -6,5 +6,13 @@ var mysql=require('./../AirbnbBackend/services/mysql');
 
 exports.getDetails=function (req,res)
 {
+    var msg_payload={
+        proname: req.param('proname'),
+        date: req.param()
+
+
+    }
+
+
 
 };

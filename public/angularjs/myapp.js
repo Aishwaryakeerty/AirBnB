@@ -25,6 +25,10 @@ myapp.config(function ($stateProvider,$urlRouterProvider,$locationProvider) {
                 }
             }
         })
+        .state('search',{
+            url:'/search',
+            templateUrl:'../templates/dishapart'  //Enter the template created by disha for room search
+        })
     ;
 
 });
