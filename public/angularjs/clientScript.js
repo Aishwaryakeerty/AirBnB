@@ -84,7 +84,7 @@ clientModule.controller('TestCtrl',function ($scope,$http) {
         console.log($scope.journey);
         $http({
             method : 'POST',
-            url : '/searchroom',
+            url : '/getRoom',
             data : $scope.journey
         }).success(function(data) {
             //checking the response data for statusCode
