@@ -6,7 +6,7 @@
  */
 //super simple rpc server example
 var amqp = require('amqp')
-    , util = require('util');
+    , util = require('util'); 
 
 var login = require('./services/login');
 
